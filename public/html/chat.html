@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Online</title>
+    <link rel="stylesheet" href="../css/chat.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="sidebar">
+            <h1>Conversas</h1>
+            <ul class="user-list" id="user-list">
+                
+            </ul>
+        </div>
+            
+        <div class="chat_area" id="chat_area">
+
+            <div class="name">
+                <h1 id="contato"></h1>
+            </div>
+
+            <div class="messages" id="messages">
+                
+            </div>
+    
+            <form id="formMessages"  class="input-area">
+                <input type="text" id="message">
+                <button type="submit"><img src="../enviado.png" alt="" width="30px" height="30px"></button>
+            </form>
+    
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+    <script src="../js/socket.js"></script>
+</body>
+</html>
