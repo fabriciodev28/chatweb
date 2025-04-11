@@ -1,25 +1,28 @@
 const express = require('express')
 const router = express.Router()
 
-const path = require('node:path')
-router.use(express.static(path.join(__dirname,'public')))
+//Mongoose
+const mongoose = require('mongoose')
+require('../models/User')
+const Users = mongoose.model('users')
 
-//Necessário ainda a model do mongoose para validações de login
+
 
 router.get('/cadastro.html', (req,res)=>{
 
-    res.sendFile(path.join(__dirname, "./public/html/cadastro.html"))
+    res.sendFile("public/html/cadastro.html")
 
 })
 
 
 router.get('/chat.html', (req,res)=>{
 
-    res.sendFile(path.join(__dirname, "./public/html/chat.html"))
+    res.sendFile("public/html/chat.html")
 
 })
 
 
+//Validacao de login
 router.post('/chat.html', async (req,res)=>{
 
     let key = 0;
@@ -30,7 +33,7 @@ router.post('/chat.html', async (req,res)=>{
 
         if(req.body.username == element.username && req.body.password == element.password){
             key = 1
-            res.sendFile(path.join(__dirname, "./public/html/chat.html"))
+            res.sendFile("public/html/chat.html")
         }
 
     });
@@ -45,6 +48,7 @@ router.post('/chat.html', async (req,res)=>{
 
 })
 
+//Cadastro de usuários no banco de dados
 router.post('/cadastro.html', async (req,res)=>{
 
 
@@ -69,7 +73,7 @@ router.post('/cadastro.html', async (req,res)=>{
 
         username = req.body.username
         
-        res.sendFile(path.join(__dirname, "./public/html/chat.html"))
+        res.sendFile("public/html/chat.html")
 
     }else{
         res.redirect('/cadastro.html?reg=0')

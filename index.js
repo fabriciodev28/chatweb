@@ -1,37 +1,29 @@
-//express
+//require dos modules
 const express = require('express')
 const app = express()
 
-
-//mongoose
 const mongoose = require('mongoose')
-mongoose.connect("mongodb+srv://fabriciodev28:WZwa19lI9kxVtaW2@app-chat.eajld.mongodb.net/?retryWrites=true&w=majority&appName=App-Chat")
 
+require('./models/Messages')
+const Messages = mongoose.model('messages')
 
-const Usuario = mongoose.Schema({
-    username: String,
-    password: String
-})
-
-const Users = mongoose.model("users", Usuario)
-
-
-const Messages = mongoose.model('Messages', {
-    sender: String,
-    receiver: String,
-    message: String,
-    date: String
-})
-
-//router
 const users_router = require('./routes/users')
 
-//path
 const path = require('node:path')
+
+const bodyParser = require('body-parser')
+
+
+
+//-----> config requires <------
+
+//mongoose
+mongoose.connect("mongodb+srv://fabriciodev28:WZwa19lI9kxVtaW2@app-chat.eajld.mongodb.net/?retryWrites=true&w=majority&appName=App-Chat")
+
+//path
 app.use(express.static(path.join(__dirname,'public')))
 
 //body-parser
-const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
@@ -44,16 +36,17 @@ const io = require('socket.io')(server);
 let username = ''
 
 
+
 //routes
+
+app.use('/users', users_router)
+
 
 app.get('/', (req,res)=>{
 
     res.sendFile(path.join(__dirname, "./public/html/index.html"))
 
 })
-
-
-app.use('/users', users_router)
 
 //variável global que armazena os usuários online
 let users = []
