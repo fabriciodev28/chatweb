@@ -9,9 +9,11 @@ const Messages = mongoose.model('messages')
 
 const users_router = require('./routes/users')
 
-const path = require('node:path')
+const path = require('path')
 
 const bodyParser = require('body-parser')
+
+const ejs = require('ejs')
 
 
 
@@ -27,6 +29,10 @@ app.use(express.static(path.join(__dirname,'public')))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+//ejs views
+app.set('view engine', 'html');
+app.engine('html', ejs.renderFile);
+
 //server http e socket
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
@@ -41,12 +47,12 @@ let username = ''
 
 app.use('/users', users_router)
 
-
 app.get('/', (req,res)=>{
 
-    res.sendFile(path.join(__dirname, "./public/html/index.html"))
+    res.render("index.html")
 
 })
+
 
 //variável global que armazena os usuários online
 let users = []

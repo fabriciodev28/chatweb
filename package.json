@@ -9,6 +9,7 @@
   "author": "fabricio silva",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.10",
     "express": "^4.21.0",
     "mongoose": "^8.7.1",
     "nodemon": "^3.1.9",

@@ -7,23 +7,22 @@ require('../models/User')
 const Users = mongoose.model('users')
 
 
-
 router.get('/cadastro.html', (req,res)=>{
 
-    res.sendFile("public/html/cadastro.html")
+    res.render("cadastro.html")
 
 })
 
 
 router.get('/chat.html', (req,res)=>{
 
-    res.sendFile("public/html/chat.html")
+    res.render("chat.html")
 
 })
 
 
 //Validacao de login
-router.post('/chat.html', async (req,res)=>{
+router.post('/chat', async (req,res)=>{
 
     let key = 0;
     
@@ -33,7 +32,7 @@ router.post('/chat.html', async (req,res)=>{
 
         if(req.body.username == element.username && req.body.password == element.password){
             key = 1
-            res.sendFile("public/html/chat.html")
+            res.render("chat.html")
         }
 
     });
@@ -73,7 +72,7 @@ router.post('/cadastro.html', async (req,res)=>{
 
         username = req.body.username
         
-        res.sendFile("public/html/chat.html")
+        res.render("chat.html")
 
     }else{
         res.redirect('/cadastro.html?reg=0')
