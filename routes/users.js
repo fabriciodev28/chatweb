@@ -7,6 +7,10 @@ require('../models/User')
 const Users = mongoose.model('users')
 
 
+//variável global que recebe todo novo usuário
+let username = ''
+
+
 router.get('/cadastro.html', (req,res)=>{
 
     res.render("cadastro.html")
@@ -42,8 +46,9 @@ router.post('/chat', async (req,res)=>{
         res.redirect('/?login=0')
 
     }
-    
+    //console.log(req.body.username)
     username = req.body.username
+    console.log(username)
 
 })
 
@@ -70,8 +75,7 @@ router.post('/cadastro.html', async (req,res)=>{
             password: req.body.password
         }).save()
 
-        username = req.body.username
-        
+        //username = req.body.username
         res.render("chat.html")
 
     }else{
@@ -81,4 +85,5 @@ router.post('/cadastro.html', async (req,res)=>{
 
 })
 
-module.exports = router
+console.log(username)
+module.exports = [router, username]

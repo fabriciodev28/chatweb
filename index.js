@@ -7,13 +7,16 @@ const mongoose = require('mongoose')
 require('./models/Messages')
 const Messages = mongoose.model('messages')
 
-const users_router = require('./routes/users')
+const router = require('./routes/users')
+const users_router = router[0]
 
 const path = require('path')
 
 const bodyParser = require('body-parser')
 
 const ejs = require('ejs')
+
+require('dotenv').config()
 
 
 
@@ -39,9 +42,8 @@ const io = require('socket.io')(server);
 
 
 //variável global que recebe todo novo usuário
-let username = ''
-
-
+let username_routes = require('./routes/users')
+let username = username_routes[1]
 
 //routes
 
@@ -66,8 +68,6 @@ io.on('connection', (socket)=>{
         id: socket.id,
         status: 1
     })
-
-    console.log(users);
     
     //Informar ao usuario quem ele é
     io.to(socket.id).emit('name', username)
