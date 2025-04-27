@@ -1,40 +1,36 @@
-//require dos modules
+//express
 const express = require('express')
 const app = express()
 
-const mongoose = require('mongoose')
-
-require('./models/Messages')
-const Messages = mongoose.model('messages')
-
-const router = require('./routes/users')
-const users_router = router[0]
-
-const path = require('path')
-
-const bodyParser = require('body-parser')
-
-const ejs = require('ejs')
-
-require('dotenv').config()
-
-
-
-//-----> config requires <------
 
 //mongoose
+const mongoose = require('mongoose')
 mongoose.connect("mongodb+srv://fabriciodev28:WZwa19lI9kxVtaW2@app-chat.eajld.mongodb.net/?retryWrites=true&w=majority&appName=App-Chat")
 
+
+const Usuario = mongoose.Schema({
+    username: String,
+    password: String
+})
+
+const Users = mongoose.model("users", Usuario)
+
+
+const Messages = mongoose.model('Messages', {
+    sender: String,
+    receiver: String,
+    message: String,
+    date: String
+})
+
 //path
+const path = require('node:path')
 app.use(express.static(path.join(__dirname,'public')))
 
 //body-parser
+const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-
-//ejs views
-app.set('view engine', 'html');
-app.engine('html', ejs.renderFile);
 
 //server http e socket
 const server = require('http').createServer(app);
@@ -42,19 +38,88 @@ const io = require('socket.io')(server);
 
 
 //variável global que recebe todo novo usuário
-let username_routes = require('./routes/users')
-let username = username_routes[1]
+let username = ''
+
 
 //routes
 
-app.use('/users', users_router)
-
 app.get('/', (req,res)=>{
 
-    res.render("index.html")
+    res.sendFile(path.join(__dirname, "./public/html/index.html"))
 
 })
 
+
+app.get('/cadastro.html', (req,res)=>{
+
+    res.sendFile(path.join(__dirname, "./public/html/cadastro.html"))
+
+})
+
+app.get('/chat.html', (req,res)=>{
+
+    res.sendFile(path.join(__dirname, "./public/html/chat.html"))
+
+})
+
+
+app.post('/chat.html', async (req,res)=>{
+
+    let key = 0;
+    
+    let users = await Users.find().exec()
+
+    users.forEach(element => {
+
+        if(req.body.username == element.username && req.body.password == element.password){
+            key = 1
+            res.sendFile(path.join(__dirname, "./public/html/chat.html"))
+        }
+
+    });
+
+    if(key == 0){
+        
+        res.redirect('/?login=0')
+
+    }
+    
+    username = req.body.username
+
+})
+
+app.post('/cadastro.html', async (req,res)=>{
+
+
+    let key = 0;
+    
+    let users = await Users.find().exec()
+
+    users.forEach(element => {
+
+        if(req.body.username == element.username){
+            key = 1
+        }
+
+    });
+
+    if(key == 0){
+
+        new Users({
+            username: req.body.username,
+            password: req.body.password
+        }).save()
+
+        username = req.body.username
+        
+        res.sendFile(path.join(__dirname, "./public/html/chat.html"))
+
+    }else{
+        res.redirect('/cadastro.html?reg=0')
+    }
+
+
+})
 
 //variável global que armazena os usuários online
 let users = []
@@ -68,6 +133,8 @@ io.on('connection', (socket)=>{
         id: socket.id,
         status: 1
     })
+
+    console.log(users);
     
     //Informar ao usuario quem ele é
     io.to(socket.id).emit('name', username)
