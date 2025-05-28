@@ -2,10 +2,11 @@
 const express = require('express')
 const app = express()
 
+require('dotenv').config();
 
 //mongoose
 const mongoose = require('mongoose')
-mongoose.connect("mongodb+srv://fabriciodev28:WZwa19lI9kxVtaW2@app-chat.eajld.mongodb.net/?retryWrites=true&w=majority&appName=App-Chat")
+mongoose.connect(process.env.MONGODB_URI)
 
 
 const Usuario = mongoose.Schema({
