@@ -57,28 +57,32 @@
 }
 
 .chat_area{
+    display: none;
+    flex-direction: column;
     float: right;
     width: 80%;
-    display: none;
+    height: 100vh;
 }
 
 .name{
     display: flex;
     justify-content: center;
+    align-self: flex-start;
     align-items: center;
     width: 100%;
-    height: 60px;
+    height: 8%;
     background-color: #3e3f41;
     color: #ffff;
 }
 
 .messages{
     height: 85%;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     overflow-y: scroll;
     scroll-behavior: auto;
-    padding: 10px;
     background-color: #f5f4f4;
 }
 
@@ -108,26 +112,32 @@
     justify-content: center;
     align-items: center;
     background-color: #3e3f41;
-    height: 6.6%;
+    height: 7%;
+}
+
+#formMessages{
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 #message{
-    width: 650px;
+    width: 40%;
     font-size: 15px;
     margin-right: 10px;
     border: none;
     border-radius: 10px;
     background-color: #9e9e9e;
-    height: 20px;
+    height: 70%;
     padding: 10px;
     outline: 0;
 }
 
 button{
-    width: 80px;
+    width: 10%;
     border-radius: 10px;
     padding: 10px;
-    height: 40px;
+    height: 70%;
     border: none;
     background-color: #000000;
     color: white;
@@ -157,3 +167,36 @@ button:hover{
     border-radius: 10px;
     background: rgba(63, 63, 63, 0.8); 
 }
+
+
+
+
+
+/* 
+//X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) { 
+
+ }
+
+/*// Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) { 
+
+ }
+
+/*// Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+
+ }
+
+/*// X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+
+ }
+
+/*// XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) { 
+    
+ }

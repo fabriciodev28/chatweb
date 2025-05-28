@@ -2,6 +2,7 @@
 const express = require('express')
 const app = express()
 
+//dotenv
 require('dotenv').config();
 
 //mongoose

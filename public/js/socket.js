@@ -1,4 +1,4 @@
-const socket = io('https://chatweb-h5xi.onrender.com')
+const socket = io('http://localhost:3000')
 
         let sender = ''
         let receiver = ''
@@ -41,7 +41,7 @@ const socket = io('https://chatweb-h5xi.onrender.com')
         function onUserSelected(username){
             receiver = username
 
-            document.getElementById('chat_area').style.display = 'block'
+            document.getElementById('chat_area').style.display = 'flex'
             document.getElementById('contato').innerHTML = username         
 
 
