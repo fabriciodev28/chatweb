@@ -42,7 +42,7 @@ const socket = io('http://localhost:3000')
             receiver = username
 
             document.getElementById('chat_area').style.display = 'flex'
-            document.getElementById('contato').innerHTML = username         
+            document.getElementById('contato').innerHTML = username 
 
 
             let historico = {
