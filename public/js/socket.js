@@ -124,6 +124,28 @@ const socket = io('http://localhost:3000')
             })
         })
 
+
+
+        //Exibir o menu "hamburguer"
+        const toggleBtn = document.getElementById('menu-toggle');
+        const sidebar = document.querySelector('.sidebar');
+
+        toggleBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
         socket.on('off', (userOff)=>{
 
             let userInList = document.getElementById(userOff)
