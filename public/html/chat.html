@@ -10,15 +10,19 @@
 
     <div class="container">
 
-        <button id="menu-toggle" class="menu-toggle">
-            ☰
-        </button>
+        <div class="menu_hamburguer" onclick="showList()" id="menu_hamburguer">
+            <input type="checkbox" id="menu_toggle">
+            <label for="menu_toggle" class="menu_icon" id="label">
+                <div class="linha"></div>
+                <div class="linha"></div>
+                <div class="linha"></div>
+            </label>
+        </div>
 
-
-        <div class="sidebar">
+        <div class="sidebar" id="sidebar">
 
             <h1 style="margin-top: 20px;">Conversas</h1>
-            <ul class="user-list" id="user-list">
+            <ul class="user-list" id="user-list" onclick="selectUser()">
                 
             </ul>
             

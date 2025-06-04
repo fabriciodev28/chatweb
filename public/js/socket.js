@@ -112,7 +112,6 @@ const socket = io('http://localhost:3000')
         socket.on('messages_hist', (data)=>{ 
 
             let arrayHistorico = data
-            //let receiver = data.receiver
 
             arrayHistorico.forEach((obj)=>{
                 let messages = document.getElementById('messages')
@@ -127,25 +126,22 @@ const socket = io('http://localhost:3000')
 
 
         //Exibir o menu "hamburguer"
-        const toggleBtn = document.getElementById('menu-toggle');
-        const sidebar = document.querySelector('.sidebar');
+        function showList(){
+            if(document.getElementById('menu_toggle').checked){
+                document.getElementById('sidebar').style.display = 'flex'
+                document.getElementById('chat_area').style.display = 'none'
+            }else{
+                document.getElementById('sidebar').style.display = 'none'
+            }
+        }
 
-        toggleBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('active');
-        });
-
-
-
-
-
-
-
-
-
+        function selectUser(){
+            document.getElementById('sidebar').style.display = 'none'
+            
+        }
 
 
-
-
+        //Desconexao de usuarios
         socket.on('off', (userOff)=>{
 
             let userInList = document.getElementById(userOff)
