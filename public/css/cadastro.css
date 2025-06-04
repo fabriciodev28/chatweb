@@ -1,39 +1,44 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 
-.fundo{
+.fundo {
     background-color: #c1dbf344;
 }
 
-.container{
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding: 15px;
 }
 
-.caixa{
+.caixa {
     background-color: #000000;
     padding: 50px;
     width: 40%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
-form{
+form {
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
 }
 
-#icon{
+#icon {
     font-size: 50px;
     color: #ffffff;
 }
 
-#user, #password{
+#user,
+#password {
     margin-top: 10px;
     margin-bottom: 10px;
     background-color: #000000;
@@ -44,42 +49,66 @@ form{
     color: #ffffff;
 }
 
-input::placeholder{
+input::placeholder {
     color: #ffffff;
 }
 
-#user{
+#user {
     margin-top: 55px;
 }
 
-#user:focus, #password:focus{
+#user:focus,
+#password:focus {
     outline: 0;
     border-bottom: 2px solid #b1b1b1;
 }
 
-#user:focus::placeholder, #password:focus::placeholder{
+#user:focus::placeholder,
+#password:focus::placeholder {
     color: #b1b1b1;
 }
 
-
-#botao{
+#botao {
     border: none;
     margin: 35px 0 25px 0px;
     background-color: #ffffff;
-    padding: 8px;
+    padding: 10px;
     color: #000000;
     text-align: center;
-    font-size: 15px;
+    font-size: 16px;
+    transition: all 0.3s;
 }
 
-#botao:hover{
+#botao:hover {
     color: #ffffff;
     background-color: #000000;
     outline: 1px solid #ffffff;
 }
 
-#error{
+#error {
     display: none;
     color: red;
     margin-top: 20px;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .caixa {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    #icon {
+        font-size: 40px;
+    }
+
+    #botao {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #user,
+    #password {
+        padding: 15px 5px 10px 5px;
+    }
 }

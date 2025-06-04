@@ -136,8 +136,10 @@ const socket = io('http://localhost:3000')
         }
 
         function selectUser(){
-            document.getElementById('sidebar').style.display = 'none'
-            
+            if(window.innerWidth < 769){
+                document.getElementById('sidebar').style.display = 'none'
+                document.getElementById('menu_toggle').checked = false; // <- aqui resolve o problema
+            }
         }
 
 

@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body, html {
@@ -10,6 +11,7 @@ body, html {
     height: 100%;
     overflow: hidden;
     position: relative;
+    background-color: #1e1e1e;
 }
 
 .container {
@@ -72,12 +74,17 @@ ul div:hover {
     padding: 10px;
     overflow: hidden;
     max-width: 100%;
+    background-color: #1e1e1e; /* cinza escuro no fundo do chat */
+    color: #f1f1f1;
 }
 
 .name {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
+    background-color: #2c2c2e; /* fundo levemente diferente para destacar o topo */
+    padding: 10px;
+    border-radius: 8px;
 }
 
 /* MENSAGENS */
@@ -87,45 +94,52 @@ ul div:hover {
     font-size: 20px;
     overflow-y: auto;
     flex: 1;
+    background-color: #1e1e1e;
 }
 
 /* BOLHAS DE MENSAGEM */
 .message, .messageMe {
     max-width: 60%;
     word-wrap: break-word;
-    background-color: black;
-    color: #fff;
     border-radius: 10px;
     padding: 10px;
     margin: 10px;
 }
 
 .message {
-    align-self: flex-end;
+    align-self: flex-start;
+    background-color: #2c2c2e;
+    color: #fff;
 }
 
 .messageMe {
-    align-self: flex-start;
+    align-self: flex-end;
+    background-color: #000000;
+    color: #fff;
 }
 
 /* FORMULÁRIO DE ENVIO */
 .input-area {
     display: flex;
     gap: 10px;
-    padding-top: 10px;
+    background-color: #2c2c2e;
+    border-radius: 8px;
+    padding: 10px;
 }
 
 .input-area input {
     flex: 1;
     padding: 10px;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: none;
+    background-color: #3a3a3c;
+    color: white;
 }
 
 .input-area button {
     padding: 10px 15px;
     border-radius: 8px;
-    background-color: black;
+    background-color: #4a4a4c;
     color: white;
     border: none;
     cursor: pointer;
@@ -176,12 +190,7 @@ ul div:hover {
     }
 
     .input-area {
-        flex-direction: column;
-    }
-
-    .input-area input,
-    .input-area button {
-        width: 100%;
+        flex-direction: row;
     }
 }
 
@@ -191,7 +200,7 @@ ul div:hover {
 .menu_hamburguer{
     display: none;
     position: absolute;
-    top: 35px;
+    top: 40px;
     left: 240px;
     z-index: 4;
 }
@@ -201,8 +210,8 @@ ul div:hover {
 }
 
 .menu_icon{
-    width: 30px;
-    height: 25px;
+    width: 27px;
+    height: 22px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -226,19 +235,19 @@ ul div:hover {
 }
 
 #menu_toggle:checked + .menu_icon .linha:nth-child(3){
-    transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(3px, -3px);
 }
 
 /* Exibe o botão em telas pequenas */
 @media (max-width: 768px) {
     .menu_hamburguer {
         display: flex;
-        top: 15px;
+        top: 25px;
         left: 30px;
     }
 
     .linha{
-        background-color: black;
+        background-color: rgb(255, 255, 255);
     }
 
     .sidebar{
@@ -246,6 +255,6 @@ ul div:hover {
     }
 
     #menu_toggle:checked + .menu_icon .linha:nth-child(1),  #menu_toggle:checked + .menu_icon .linha:nth-child(3){
-        background-color: white;
+        background-color: rgb(255, 255, 255);
     }
 }
