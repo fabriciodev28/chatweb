@@ -144,6 +144,49 @@ ul div:hover {
     cursor: pointer;
 }
 
+
+/* Botão do menu hamburguer */
+.menu_hamburguer{
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 240px;
+    z-index: 4;
+}
+
+#menu_toggle{
+    display: none;
+}
+
+.menu_icon{
+    width: 27px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 5;
+    position: relative;
+}
+
+.linha{
+    height: 4px;
+    background-color: rgb(214, 214, 214);
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+#menu_toggle:checked + .menu_icon .linha:nth-child(1){
+    transform: rotate(45deg) translate(10px, 10px);
+}
+
+#menu_toggle:checked + .menu_icon .linha:nth-child(2){
+    opacity: 0;
+}
+
+#menu_toggle:checked + .menu_icon .linha:nth-child(3){
+    transform: rotate(-45deg) translate(3px, -3px);
+}
+
 /* SCROLL */
 ::-webkit-scrollbar {
     width: 8px;
@@ -193,7 +236,7 @@ ul div:hover {
         flex-direction: column;
         font-size: 18px;
         background-color: #1e1e1e;
-        padding-bottom: 20px; /* margem inferior para evitar que mensagens fiquem atrás do input */
+        padding-bottom: 40px; /* margem inferior para evitar que mensagens fiquem atrás do input */
     }
 
     .message, .messageMe {
@@ -231,57 +274,10 @@ ul div:hover {
         border: none;
         cursor: pointer;
     }
-}
 
-
-
-/* Botão do menu hamburguer */
-.menu_hamburguer{
-    display: none;
-    position: absolute;
-    top: 40px;
-    left: 240px;
-    z-index: 4;
-}
-
-#menu_toggle{
-    display: none;
-}
-
-.menu_icon{
-    width: 27px;
-    height: 22px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 5;
-    position: relative;
-}
-
-.linha{
-    height: 4px;
-    background-color: rgb(214, 214, 214);
-    border-radius: 2px;
-    transition: 0.3s;
-}
-
-#menu_toggle:checked + .menu_icon .linha:nth-child(1){
-    transform: rotate(45deg) translate(10px, 10px);
-}
-
-#menu_toggle:checked + .menu_icon .linha:nth-child(2){
-    opacity: 0;
-}
-
-#menu_toggle:checked + .menu_icon .linha:nth-child(3){
-    transform: rotate(-45deg) translate(3px, -3px);
-}
-
-/* Exibe o botão em telas pequenas */
-@media (max-width: 768px) {
     .menu_hamburguer {
         display: flex;
-        top: 25px;
+        top: 20px;
         left: 30px;
     }
 
