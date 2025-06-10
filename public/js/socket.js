@@ -1,4 +1,4 @@
-const socket = io('https://chatweb-h5xi.onrender.com')
+const socket = io('http://localhost:3000')
 
         let sender = ''
         let receiver = ''
