@@ -202,7 +202,6 @@ ul div:hover {
 
     .input-area {
         flex-direction: row;
-        position: sticky;
     }
 }
 
