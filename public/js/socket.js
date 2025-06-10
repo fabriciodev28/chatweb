@@ -77,7 +77,9 @@ const socket = io('http://localhost:3000')
 
             let string = `${dia}/${mes}/${ano} ${horas}:${minutos}`
 
-            if (message.value) {
+            let new_Message = message.value.trim()
+
+            if (new_Message) {
               socket.emit('send_message', 
               //Objeto com os dados de usuários e a mensagem
                 {
