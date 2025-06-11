@@ -236,7 +236,7 @@ ul div:hover {
         flex-direction: column;
         font-size: 18px;
         background-color: #1e1e1e;
-        padding-bottom: 40px; /* margem inferior para evitar que mensagens fiquem atrás do input */
+        padding-bottom: 50px; /* margem inferior para evitar que mensagens fiquem atrás do input */
     }
 
     .message, .messageMe {
