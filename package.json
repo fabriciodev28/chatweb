@@ -1,21 +1,9 @@
 {
-  "name": "chatweb",
+  "name": "chat",
   "version": "1.0.0",
-  "description": "",
+  "start": "node index.js",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
-  },
-  "author": "fabricio silva",
-  "license": "ISC",
-  "dependencies": {
-    "dotenv": "^16.5.0",
-    "ejs": "^3.1.10",
-    "express": "^4.21.0",
-    "mongoose": "^8.7.1",
-    "nodemon": "^3.1.9",
-    "socket.io": "^4.8.0"
-  },
-  "repository": "git@github.com:fabriciodev28/chatweb.git"
+  "repository": "git@github.com:fabriciodev28/chatweb.git",
+  "author": "fabriciodev28 <fabriciodev28@gmail.com>",
+  "license": "MIT"
 }
