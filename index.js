@@ -135,8 +135,6 @@ io.on('connection', (socket)=>{
         id: socket.id,
         status: 1
     })
-
-    console.log(users);
     
     //Informar ao usuario quem ele é
     io.to(socket.id).emit('name', username)
@@ -167,9 +165,7 @@ io.on('connection', (socket)=>{
                 date: data.date
             })
 
-            message.save().then(()=>{
-                console.log('Salvo em DB');
-            })
+            message.save()
 
 
         //Enviando a mensagem
@@ -201,7 +197,6 @@ io.on('connection', (socket)=>{
             }
         })
 
-        console.log(historico)
         io.to(socketId).emit('messages_hist', historico)
     
     })
