@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+.fundo {
+    background-color: #1e1e1e;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100vh;
+    width: 100%;
+}
+
+.caixa {
+    background-color: #000000;
+    padding: 50px;
+    width: 100%;
+    max-width: 400px; /* Limita o tamanho máximo da caixa */
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+#icon {
+    font-size: 50px;
+    color: #ffffff;
+}
+
+#user, #password {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #000000;
+    border: none;
+    height: 40px;
+    padding: 0 10px;
+    border-bottom: 2px solid #ffffff;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: #ffffff;
+}
+
+#user {
+    margin-top: 35px;
+}
+
+#user:focus, #password:focus {
+    outline: 0;
+    border-bottom: 2px solid #b1b1b1;
+}
+
+#user:focus::placeholder, #password:focus::placeholder {
+    color: #b1b1b1;
+}
+
+#botao {
+    border: none;
+    margin: 35px 0 25px 0px;
+    background-color: #ffffff;
+    padding: 10px;
+    color: #000000;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+#botao:hover {
+    color: #ffffff;
+    background-color: #000000;
+    outline: 1px solid #ffffff;
+}
+
+.cadastro {
+    text-decoration: none;
+    color: #b1b1b1;
+    font-size: 14px;
+}
+
+.cadastro:hover {
+    cursor: pointer;
+    color: #dbdbdb;
+}
+
+#error {
+    display: none;
+    color: red;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .caixa {
+        padding: 30px 20px;
+    }
+
+    #user, #password {
+        font-size: 14px;
+        height: 35px;
+    }
+
+    #icon {
+        font-size: 40px;
+    }
+
+    #botao {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .cadastro {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .caixa {
+        width: 100%;
+        padding: 25px 15px;
+        border-radius: 8px;
+    }
+
+    #user, #password {
+        height: 30px;
+        font-size: 13px;
+    }
+
+    #icon {
+        font-size: 35px;
+    }
+
+    #botao {
+        font-size: 13px;
+        padding: 6px;
+    }
+
+    .cadastro {
+        font-size: 12px;
+    }
+}

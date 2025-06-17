@@ -1,0 +1,16 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:fabriciodev28/chatweb.git",
+  "author": "fabriciodev28 <fabriciodev28@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src -d lib",
+    "test": "jest",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
