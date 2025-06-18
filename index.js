@@ -7,7 +7,7 @@ require('dotenv').config();
 
 //mongoose
 const mongoose = require('mongoose')
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect("mongodb+srv://fabriciodev28:WZwa19lI9kxVtaW2@app-chat.eajld.mongodb.net/?retryWrites=true&w=majority&appName=App-Chat")
 
 
 const Usuario = mongoose.Schema({
