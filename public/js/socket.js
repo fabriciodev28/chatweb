@@ -1,5 +1,10 @@
 const socket = io('https://chatweb-h5xi.onrender.com')
 
+
+        if (Notification.permission !== 'granted') {
+            Notification.requestPermission()
+        }           
+
         let sender = ''
         let receiver = ''
 
@@ -104,13 +109,16 @@ const socket = io('https://chatweb-h5xi.onrender.com')
         //Socket que recebe novas mensagens e imprime no navegador
         socket.on('new_message', (data)=>{
 
-            let notification = new Notification("Chat Web", {
-                icon: './comment-regular.svg',
-                body: data.sender + ': Nova Mensagem'
-            })
-
-            notification.onclick = ()=>{
-                onUserSelected(data.sender)
+            if (Notification.permission === 'granted') {
+                
+                let notification = new Notification("Chat Web", {
+                    icon: './comment-regular.svg',
+                    body: data.sender + ': Nova Mensagem'
+                });
+            
+                notification.onclick = () => {
+                    onUserSelected(data.sender);
+                };
             }
 
             if(receiver == data.sender){
