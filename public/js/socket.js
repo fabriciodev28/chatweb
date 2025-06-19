@@ -31,7 +31,6 @@ const socket = io('http://localhost:3000')
                 }
             })
 
-            console.log(users)
 
         })
 
@@ -104,6 +103,15 @@ const socket = io('http://localhost:3000')
 
         //Socket que recebe novas mensagens e imprime no navegador
         socket.on('new_message', (data)=>{
+
+            let notification = new Notification("Chat Web", {
+                icon: './comment-regular.svg',
+                body: data.sender + ': Nova Mensagem'
+            })
+
+            notification.onclick = ()=>{
+                onUserSelected(data.sender)
+            }
 
             if(receiver == data.sender){
                 document.getElementById('messages').innerHTML += '<div class="message">' + data.message + '</div>'
