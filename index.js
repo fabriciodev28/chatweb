@@ -18,7 +18,7 @@ const Messages = mongoose.model('Messages', { sender: String, receiver: String, 
 const Subscription = mongoose.model('subscriptions', { username: String, subscription: Object });
 
 webPush.setVapidDetails(
-  'fabriciodev28@gmail.com',
+  'mailto:fabriciodev28@gmail.com',
   process.env.PUBLIC_VAPID_KEY,
   process.env.PRIVATE_VAPID_KEY
 );
