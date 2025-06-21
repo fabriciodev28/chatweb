@@ -23,7 +23,7 @@ if ('serviceWorker' in navigator && 'PushManager' in window) {
 }
 
 function subscribeUser(registration) {
-    const publicKey = 'BCd6N_MZ_4YFDDzLYLdAqzubtNpssVjDI_epE5gNCOfpbj2FJ7cHu0ph9_Znvu9SGNVNkbM3qxv9VOiG5YblyO4'; // Substitua com sua chave pública VAPID
+    const publicKey = 'BCd6N_MZ_4YFDDzLYLdAqzubtNpssVjDI_epE5gNCOfpbj2FJ7cHu0ph9_Znvu9SGNVNkbM3qxv9VOiG5YblyO4';
     registration.pushManager.subscribe({
         userVisibleOnly: true,
         applicationServerKey: urlBase64ToUint8Array(publicKey)
