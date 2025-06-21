@@ -88,7 +88,7 @@ io.on('connection', (socket) => {
                     const payload = JSON.stringify({
                         title: `Nova mensagem de ${data.sender}`,
                         body: data.message,
-                        url: '/chat.html'
+                        url: 'https://chatweb-h5xi.onrender.com/chat.html'
                     });
                     webPush.sendNotification(sub.subscription, payload).catch(err => console.error(err));
                 }

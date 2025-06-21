@@ -11,7 +11,7 @@ const form = document.getElementById('formMessages');
 
 // Service Worker e Push
 if ('serviceWorker' in navigator && 'PushManager' in window) {
-    navigator.serviceWorker.register('/sw.js').then(registration => {
+    navigator.serviceWorker.register('../sw.js').then(registration => {
         console.log('Service Worker registrado com sucesso.');
 
         Notification.requestPermission().then(permission => {
