@@ -9,18 +9,26 @@ let arrayUsers = [];
 const messageInput = document.getElementById('message');
 const form = document.getElementById('formMessages');
 
-// Service Worker e Push
-if ('serviceWorker' in navigator && 'PushManager' in window) {
-    navigator.serviceWorker.register('/sw.js').then(registration => {
-        console.log('Service Worker registrado com sucesso.');
 
-        Notification.requestPermission().then(permission => {
-            if (permission === 'granted') {
-                subscribeUser(registration);
-            }
+
+
+socket.on('name', (username) => {
+    sender = username;
+
+    // Service Worker e Push
+    if ('serviceWorker' in navigator && 'PushManager' in window) {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+            console.log('Service Worker registrado com sucesso.');
+
+            Notification.requestPermission().then(permission => {
+                if (permission === 'granted') {
+                    subscribeUser(registration);
+                }
+            });
         });
-    });
-}
+    }
+});
+
 
 function subscribeUser(registration) {
     const publicKey = 'BCd6N_MZ_4YFDDzLYLdAqzubtNpssVjDI_epE5gNCOfpbj2FJ7cHu0ph9_Znvu9SGNVNkbM3qxv9VOiG5YblyO4';
@@ -46,10 +54,6 @@ function urlBase64ToUint8Array(base64String) {
     }
     return outputArray;
 }
-
-socket.on('name', (username) => {
-    sender = username;
-});
 
 socket.on('user', (users) => {
     arrayUsers = [];
