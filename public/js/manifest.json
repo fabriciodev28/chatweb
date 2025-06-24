@@ -1,0 +1,21 @@
+{
+  "name": "Chat Web",
+  "short_name": "Chat",
+  "start_url": "/chat.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0a84ff",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "../web-app-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "../web-app-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
