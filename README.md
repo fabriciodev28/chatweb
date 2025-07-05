@@ -1,8 +1,14 @@
 # 💬 ChatWeb
 
-Um aplicativo de chat em tempo real simples e funcional, desenvolvido com Node.js, Socket.IO e HTML/CSS/JS puro. Ideal para fins de aprendizado ou como base para projetos de comunicação.
+Este é um projeto de chat em tempo real desenvolvido em NodeJS. Nele são usados SocketIO para comunicação em tempo real entre os usuários e MongoDB para armazenamento dos dados de cada usuário cadastrado e as mensagens entre eles
 
 ---
+
+## Tela inicial
+![Image](https://github.com/user-attachments/assets/f1084c9e-5cfe-4d3e-8554-7218f5037973)
+
+## Tela do chat
+![Image](https://github.com/user-attachments/assets/bf57acf1-accc-4e1c-b41f-7cc585d47fef)
 
 ## 🚀 Funcionalidades
 
@@ -23,25 +29,9 @@ Um aplicativo de chat em tempo real simples e funcional, desenvolvido com Node.j
 
 ---
 
-## 📁 Estrutura do projeto
-
-```
-chatweb-main/
-├── index.js                # Servidor Node.js com Express e Socket.IO
-├── package.json
-├── public/
-│   ├── css/                # Estilos para páginas (cadastro, chat, etc.)
-│   ├── html/               # Páginas HTML (login, cadastro, chat)
-│   └── js/
-│       └── socket.js       # Lógica do cliente para WebSocket
-```
-
----
-
 ## 🧰 Pré-requisitos
 
 - Node.js (versão 14+ recomendada)
-- npm ou yarn
 
 ---
 
@@ -63,15 +53,6 @@ Acesse no navegador: `http://localhost:3000`
 
 ---
 
-## 📌 Possíveis melhorias
-
-- Autenticação com JWT ou sessões
-- Banco de dados para persistência de mensagens e usuários
-- Design mais moderno
-- Notificações via Web Push
-
----
-
 ## 📄 Licença
 
 Este projeto está sob a licença MIT. Sinta-se à vontade para utilizar e modificar.
@@ -81,5 +62,5 @@ Este projeto está sob a licença MIT. Sinta-se à vontade para utilizar e modif
 ## 👨‍💻 Autor
 
 Fabricio Silva  
-[GitHub](https://github.com/seu-usuario)  
+[GitHub](https://github.com/fabriciodev28)  
 [LinkedIn](https://linkedin.com/in/seu-perfil)
