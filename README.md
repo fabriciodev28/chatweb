@@ -22,10 +22,13 @@ Este é um projeto de chat em tempo real desenvolvido em NodeJS. Nele são usado
 
 ## 🧪 Tecnologias utilizadas
 
-- [Node.js](https://nodejs.org/)
-- [Express](https://expressjs.com/)
-- [Socket.IO](https://socket.io/)
-- HTML5, CSS3, JavaScript
+- ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+- ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
+- ![Socket.io](https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101)
+-	![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
+- ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+- ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+- ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
 ---
 
@@ -39,8 +42,7 @@ Este é um projeto de chat em tempo real desenvolvido em NodeJS. Nele são usado
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/chatweb.git
-cd chatweb
+git clone https://github.com/fabriciodev28/chatweb.git
 
 # Instale as dependências
 npm install
@@ -62,5 +64,5 @@ Este projeto está sob a licença MIT. Sinta-se à vontade para utilizar e modif
 ## 👨‍💻 Autor
 
 Fabricio Silva  
-[GitHub](https://github.com/fabriciodev28)  
-[LinkedIn](https://linkedin.com/in/seu-perfil)
+[GitHub](https://github.com/fabriciodev28](https://github.com/fabriciodev28))  
+[LinkedIn](https://www.linkedin.com/in/fabricio-silva-207317234)
