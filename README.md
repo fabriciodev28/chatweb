@@ -1,8 +1,6 @@
 # 💬 ChatWeb
 
 Este é um projeto de chat em tempo real desenvolvido em NodeJS. Nele são usados SocketIO para comunicação em tempo real entre os usuários e MongoDB para armazenamento dos dados de cada usuário cadastrado e as mensagens entre eles.
-O projeto está hospedado na plataforma render:
-https://chatweb-h5xi.onrender.com
 
 ---
 
